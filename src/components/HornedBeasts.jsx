@@ -14,13 +14,11 @@ updateVotes = () => {
 
   render() {
     return (
-      <>
-        <div className="beasts-container">
-          <Card >
+          <Card  style={{ width: '18rem' }} >
             <Card.Img
-            style={{ width: '18rem' }} 
               variant='top'
               src={this.props.image_url}
+              onClick={this.updateVotes}
             />
             <Card.Body>
               <Card.Title>{this.props.title}</Card.Title>
@@ -35,8 +33,6 @@ updateVotes = () => {
               <small> {this.state.numberOfVotes}</small>
             </Card.Footer>
           </Card>
-        </div>
-        </>
     );
   }
 }

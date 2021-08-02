@@ -13,11 +13,9 @@ class Footer extends Component {
                 color:this.state.color,
                 bottom: '0',
                 display: 'flex',
-                flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent:' center',
                 fontSize: 'calc(10px + 2vmin)',
-                position: 'fixed',
                 width: '100%',
               }}
               onClick={()=>{this.setState({background: this.state.color,

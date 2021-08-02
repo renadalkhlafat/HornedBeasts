@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Data from './assets/data.json';
-import  {CardDeck}  from 'react-bootstrap';
+import  {Col,Container,Row}  from 'react-bootstrap';
 import HornedBeast from './HornedBeasts';
 
 class Main extends Component {
@@ -16,10 +16,10 @@ class Main extends Component {
   render() {
     return (
       <main>
-        <div id='wrapper' >
-          <CardDeck>
+          <Container fluid>
+            <Row>
             {Data.map(({ image_url, title, description, keyword, horns }) => (
-                <div key={title} >
+                <Col key={title} >
               <HornedBeast
                 image_url={image_url}
                 title={title}
@@ -27,10 +27,11 @@ class Main extends Component {
                 keyword={keyword}
                 horns={horns}
               ></HornedBeast>
-              </div>
+              </Col>
             ))}
-          </CardDeck>
-        </div>
+            </Row>
+          </Container>
+       
       </main>
     );
   }

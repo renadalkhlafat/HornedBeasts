@@ -29,17 +29,17 @@ Estimate of time needed to complete: 2 hours
 
 Start time:  3:45 pm
 
-Finish time:  5:15 pm
+Finish time:  5:00 pm
 
-Actual time needed to complete: 2 hours 
+Actual time needed to complete: one hour and 45 min. 
 ___________________________________________________________________
 
 ### Stretch Goal- Add Interaction
 
 Estimate of time needed to complete: 2 hours
 
-Start time:  5:30 pm
+Start time:  5:05 pm
 
-Finish time: 6:15 pm
+Finish time: 5:35 pm
 
-Actual time needed to complete: 45 min
+Actual time needed to complete: 30 min
