@@ -1,85 +1,71 @@
+*{
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+  width: auto;
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background: #B2B1B9;
-  color:#FFD523;
-  max-height: 10vh;
+/* main{
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+} */
+header{
   text-align: center;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
- 
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#beast{
+.beasts-container {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  justify-content: space-around;
-  background-color: #d0d2d6;
-  margin: 10px 15px;
-  border-radius: 5px;
-  height:300px;
+  grid-template-columns: repeat(4, auto);
 }
-#beast img{
-  width: 300px;
-  height: 300px;
-  object-fit: fill;
-  border-radius: 5px;
+
+.card {
+  margin: 1rem;
 }
-.info{
-  float: left;
-  display: grid;
-  grid-template-rows:1fr 1fr 1fr 1fr ;
-}
-.info p{
-  align-items: center;
-  text-align: left;
+
+.card-deck {
   justify-content: center;
-  margin: 5px;
 }
-.info h1{
-  align-items: center;
-  text-align: left;
-  justify-content: center;
-}  
+
+.heart .btn-link {
+  text-decoration: none;
+  border: none;
+  background-color: none;
+}
+
+.heart .btn-link:focus,
+.heart .btn-link:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
 
 footer{
-  background: #B2B1B9;
-  color:#FFD523;
   bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  position: fixed;
-  width: 100%;
+  text-align: center;
+  height: 50px;
+  width:100%;
+  box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
 }
+.CardDeck{
+  display: flex;
+  flex-wrap: wrap ;
+}
+.beasts-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);}
+
+  /* div {
+    display: block;
+} */
+/* .card{
+  border: 2px solid #222;
+} */
