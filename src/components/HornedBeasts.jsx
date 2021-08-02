@@ -1,18 +1,44 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
-class HornedBeasts extends Component {
-    render() {
-        return (
-                    <section id='beast' key={this.props.title}>
-                        <img src={this.props.image_url} alt={this.props.title} ></img>
-                        <div className='info'>
-                            <h1> Title : {this.props.title}</h1>
-                            <p> Description :{this.props.description}</p>
-                            <p> Keyword : {this.props.keyword}</p>
-                            <p> Horns : {this.props.horns}</p>
-                        </div>
-                    </section>
-                )
-            };
-    }
-export default HornedBeasts;
+class HornedBeast extends React.Component {
+  state = {
+    numberOfVotes: 0,
+  };
+updateVotes = () => {
+    this.setState({
+      numberOfVotes: this.state.numberOfVotes + 1,
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <div className="beasts-container">
+          <Card >
+            <Card.Img
+            style={{ width: '18rem' }} 
+              variant='top'
+              src={this.props.image_url}
+            />
+            <Card.Body>
+              <Card.Title>{this.props.title}</Card.Title>
+              <Card.Text>Click my Image to Vote For me !</Card.Text>
+              <Card.Text>{this.props.description}</Card.Text>
+              <Card.Text>{this.props.keyword}</Card.Text>
+              <Card.Text>
+                <Button onClick={this.updateVotes}>❤️</Button>
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer className='text-center'>
+              <small> {this.state.numberOfVotes}</small>
+            </Card.Footer>
+          </Card>
+        </div>
+        </>
+    );
+  }
+}
+
+export default HornedBeast;
