@@ -3,9 +3,12 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 class HornedBeast extends React.Component {
-  state = {
-    numberOfVotes: 0,
-  };
+  constructor(){
+    super();
+    this.state = {
+      numberOfVotes: 0,
+    };
+  }
 updateVotes = () => {
     this.setState({
       numberOfVotes: this.state.numberOfVotes + 1,
