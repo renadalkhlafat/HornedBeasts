@@ -1,41 +1,57 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
+import SelectedBeasts from './SelectedBeasts';
 class HornedBeast extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       numberOfVotes: 0,
+      show: false,
     };
   }
-updateVotes = () => {
+  updateVotes = () => {
     this.setState({
       numberOfVotes: this.state.numberOfVotes + 1,
     });
   };
-
+  handelShow = () => {
+    this.setState({ show: true })
+  }
+  handelClose = () => {
+    this.setState({ show: false })
+  }
   render() {
     return (
-          <Card  style={{ width: '18rem' }} >
-            <Card.Img
-              variant='top'
-              src={this.props.image_url}
-              onClick={this.updateVotes}
-            />
-            <Card.Body>
-              <Card.Title>{this.props.title}</Card.Title>
-              <Card.Text>Click my Image to Vote For me !</Card.Text>
-              <Card.Text>{this.props.description}</Card.Text>
-              <Card.Text>{this.props.keyword}</Card.Text>
-              <Card.Text>
-                <Button onClick={this.updateVotes}>❤️</Button>
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer className='text-center'>
-              <small> {this.state.numberOfVotes}</small>
-            </Card.Footer>
-          </Card>
+      <>
+        <Card style={{ width: '18rem' }} >
+          <Card.Img
+            variant='top'
+            src={this.props.image_url}
+            onClick={this.handelShow}
+          />
+          <Card.Body>
+            <Card.Title>{this.props.title}</Card.Title>
+            <Card.Text>Click my Image to Vote For me !</Card.Text>
+            <Card.Text>{this.props.description}</Card.Text>
+            <Card.Text>{this.props.keyword}</Card.Text>
+            <Card.Text>
+              <Button onClick={this.updateVotes}>❤️</Button>
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer className='text-center'>
+            <small> {this.state.numberOfVotes}</small>
+          </Card.Footer>
+        </Card>
+
+        <SelectedBeasts
+          title={this.props.title}
+          description={this.props.description}
+          image_url={this.props.image_url}
+          show={this.state.show}
+          onClose={this.handelClose}
+        />
+      </>
     );
   }
 }
