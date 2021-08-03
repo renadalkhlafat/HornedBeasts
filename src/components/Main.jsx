@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Data from './assets/data.json';
-import { Col, Container, Row, Navbar, Form, FormControl } from 'react-bootstrap';
+import { Col, Container, Row, Navbar, Form, FormControl, Nav } from 'react-bootstrap';
 import HornedBeast from './HornedBeasts';
 
 class Main extends Component {
@@ -44,23 +44,35 @@ class Main extends Component {
     }
   }
 
- 
+
   render() {
     return (
-      <main>
-        <Navbar>
-          <Form className='d-flex'>
-            <FormControl
-              type='search'
-              placeholder='Search'
-              className='mr-2'
-              aria-label='Search'
-              autoComplete='on'
-              onChange={(e) => { this.filtering(e.target.value) }}
-            />
-          </Form>
-        </Navbar>
+      <>    
+       
         <Container fluid>
+      <Row >
+      <Navbar bg="light" expand="lg">
+       <Container fluid>
+    <Navbar.Brand href="#home">Horned Beasts</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="me-auto">
+        <Nav.Link href="#home">Home</Nav.Link>
+        <Form className='d-flex'>
+              <FormControl
+                type='search'
+                placeholder='Search'
+                className='mr-2'
+                aria-label='Search'
+                autoComplete='on'
+                onChange={(e) => { this.filtering(e.target.value) }}
+              />
+            </Form>
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+      </Row>
           <Row>
             {this.state.data.map(({ image_url, title, description, keyword, horns }) => (
               <Col key={title} >
@@ -76,7 +88,7 @@ class Main extends Component {
           </Row>
         </Container>
 
-      </main>
+      </>
     );
   }
 }
