@@ -36,12 +36,10 @@ class HornedBeast extends React.Component {
             <Card.Text>{this.props.description}</Card.Text>
             <Card.Text>{this.props.keyword}</Card.Text>
             <Card.Text>
-              <Button onClick={this.updateVotes}>❤️</Button>
+              <Button onClick={this.updateVotes} variant='outline-danger'>❤️<small> {this.state.numberOfVotes}</small></Button>
             </Card.Text>
           </Card.Body>
-          <Card.Footer className='text-center'>
-            <small> {this.state.numberOfVotes}</small>
-          </Card.Footer>
+      
         </Card>
 
         <SelectedBeasts
