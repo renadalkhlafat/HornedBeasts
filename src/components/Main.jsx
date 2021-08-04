@@ -21,6 +21,7 @@ class Main extends Component {
   componentDidMount = () => {
     this.start('all');
   };
+
   filtering = (text) => {
     if (text) {
       this.start(text.toLowerCase().trim())
@@ -44,35 +45,33 @@ class Main extends Component {
     }
   }
 
-
   render() {
     return (
-      <>    
-       
+      <>
         <Container fluid>
-      <Row >
-      <Navbar bg="light" expand="lg">
-       <Container fluid>
-    <Navbar.Brand href="#home">Horned Beasts</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Form className='d-flex'>
-              <FormControl
-                type='search'
-                placeholder='Search'
-                className='mr-2'
-                aria-label='Search'
-                autoComplete='on'
-                onChange={(e) => { this.filtering(e.target.value) }}
-              />
-            </Form>
-      </Nav>
-    </Navbar.Collapse>
-  </Container>
-</Navbar>
-      </Row>
+          <Row >
+            <Navbar bg="light" expand="lg">
+              <Container fluid>
+                <Navbar.Brand href="#home">Horned Beasts</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="me-auto">
+                    <Nav.Link href="#home">Home</Nav.Link>
+                    <Form className='d-flex'>
+                      <FormControl
+                        type='search'
+                        placeholder='Search'
+                        className='mr-2'
+                        aria-label='Search'
+                        autoComplete='on'
+                        onChange={(e) => { this.filtering(e.target.value) }}
+                      />
+                    </Form>
+                  </Nav>
+                </Navbar.Collapse>
+              </Container>
+            </Navbar>
+          </Row>
           <Row>
             {this.state.data.map(({ image_url, title, description, keyword, horns }) => (
               <Col key={title} >
